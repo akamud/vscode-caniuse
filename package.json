@@ -1,0 +1,25 @@
+{
+	"name": "vscode-caniuse",
+	"description": "Compatibility check for HTML5, CSS3, SVG, New JS API based on http://caniuse.com/",
+	"version": "0.0.1",
+	"publisher": "Mahmoud Ali",
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.sayHello"
+	],
+	"main": "./extension",
+	"contributes": {
+		"commands": [{
+			"command": "extension.sayHello",
+			"title": "Hello World"
+		}]
+	},
+	"devDependencies": {
+		"vscode": "0.10.x"
+	}
+}
