@@ -1,40 +1,60 @@
 {
-	"name": "vscode-caniuse",
+    "name": "vscode-caniuse",
     "displayName": "Can I Use",
-	"description": "Compatibility check for HTML5, CSS3, SVG, New JS API based on http://caniuse.com/ directly from Visual Studio Code",
+    "description": "Compatibility check for HTML5, CSS3, SVG, New JS API based on http://caniuse.com/ directly from Visual Studio Code",
+    "version": "0.1.0",
+    "publisher": "akamud",
     "license": "MIT",
-    
-	"version": "0.1.0",
-	"publisher": "akamud",
-	"engines": {
-		"vscode": "^0.10.1"
-	},
-	"categories": [
-		"Other"
-	],
-	"activationEvents": [
-		"onCommand:extension.canIUse"
-	],
-	"main": "./out/extension",
-	"contributes": {
-		"commands": [{
-			"command": "extension.canIUse",
-			"title": "Can I Use"
-		}],
+    "engines": {
+        "vscode": "^0.10.1"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.canIUse"
+    ],
+    "keywords": [
+        "CanIUse",
+        "CSS3",
+        "HTML5",
+        "Compatibility"
+    ],
+    "icon": "icon.png",
+    "galleryBanner": {
+        "color": "#007ACC",
+        "theme": "light"
+    },
+    "bugs": {
+        "url": "https://github.com/akamud/vscode-caniuse/issues"
+    },
+    "homepage": "https://github.com/akamud/vscode-caniuse/blob/master/README.md",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/akamud/vscode-caniuse.git"
+    },
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.canIUse",
+                "title": "Can I Use"
+            }
+        ],
         "keybindings": {
             "when": "editorTextFocus",
             "command": "extension.canIUse",
             "key": "ctrl+alt+c",
             "mac": "ctrl+c"
         }
-	},
-	"scripts": {
-		"vscode:prepublish": "tsc && node ./node_modules/vscode/bin/compile",
-		"compile": "tsc && node ./node_modules/vscode/bin/compile -watch -p ./"
-	},
-	"devDependencies": {
-		"typescript": "^1.6.2",
-		"vscode": "0.10.x",
+    },
+    "scripts": {
+        "vscode:prepublish": "tsc && node ./node_modules/vscode/bin/compile",
+        "compile": "tsc && node ./node_modules/vscode/bin/compile -watch -p ./"
+    },
+    "devDependencies": {
+        "typescript": "^1.6.2",
+        "vscode": "0.10.x",
         "request": "^2.66.0"
-	}
+    }
 }
