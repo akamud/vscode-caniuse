@@ -1,13 +1,17 @@
-# README
-## This is the README for your extension "vscode-caniuse" 
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+# Can I Use
 
-* Split the editor (`Cmd+\` on OSX or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on OSX or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (OSX) to see a list of Markdown snippets
+Compatibility check for HTML5, CSS3, SVG, New JS API based on http://caniuse.com/ directly from Visual Studio Code
 
-### For more information
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+## Using
 
-** Enjoy!**
+Just execute the command "Can I Use" and you will get the information in your status bar
+
+The default keybinding is `ctrl+alt+c` on Windows/Linux and `ctrl+c` on Mac. You can override with your custom settings.
+
+## Roadmap
+
+* Configuration options
+* Better output 
+
+## License
+[MIT License](https://raw.githubusercontent.com/akamud/vscode-caniuse/master/LICENSE)
