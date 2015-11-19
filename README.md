@@ -11,6 +11,7 @@ The default keybinding is `ctrl+alt+c` on Windows/Linux and `ctrl+c` on Mac. You
 ## Roadmap
 
 * Configuration options
+* Better support for partial matches
 * Better output 
 
 ## License
