@@ -4,7 +4,7 @@ Compatibility check for HTML5, CSS3, SVG, New JS API based on http://caniuse.com
 
 ## Installing
 
-This extension is available in the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items/akamud.vscode-caniuse)  
+This extension is available for free in the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items/akamud.vscode-caniuse)  
 ```
 ext install Can I use
 ```
