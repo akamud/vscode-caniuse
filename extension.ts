@@ -1,7 +1,7 @@
 import * as vscode from 'vscode'; 
 import * as request from 'request';
 
-var selectedBrowsers = ['ie', 'firefox' , 'chrome', 'safari', 'opera'];
+var selectedBrowsers = ['IE', 'Firefox' , 'Chrome', 'Safari', 'Opera'];
 
 export function activate(context: vscode.ExtensionContext) {
 	var disposable = vscode.commands.registerCommand('extension.canIUse', () => {
@@ -63,15 +63,22 @@ function showInformation(data) : boolean {
     var stats = data.stats;
     var result = [];
     for (var i = 0; i < selectedBrowsers.length; i++) {
-        var browser = stats[selectedBrowsers[i]];
+        var browser = stats[selectedBrowsers[i].toLowerCase()];
         var version = getVersion(browser);
         if (version)
-            result.push(selectedBrowsers[i] + ": "+ version);
+        {
+            result.push(selectedBrowsers[i] + " ✔ " + version);
+        }
+        else
+        {
+            result.push(selectedBrowsers[i] + " ✘");
+        }
+            
     }
     
     if (result && result.length > 0)
     {
-        vscode.window.setStatusBarMessage("Can I Use: " + result.join(" | "), 5000);
+        vscode.window.setStatusBarMessage("Can I Use: " + result.join(" "), 5000);
         return true;
     }
     
@@ -91,16 +98,13 @@ function getVersion(stats:any) : string {
         if (stats[keys[i]].indexOf("a") >= 0 || stats[keys[i]].indexOf("y") >= 0)
         {
             found.push(keys[i]);
+            break;
         }
     }
     
     var versions = [];
     var first = found.shift();
-    var last = found.pop();
-    if (first)
-        versions.push(first);
-    if (last)
-        versions.push(last);
+    first && versions.push(first + "+");
     
     return versions.join("-");
 }
