@@ -15,6 +15,8 @@ Just execute the command "Can I Use" and you will get the information about the 
 
 The default keybinding is `ctrl+alt+c` on Windows/Linux and `ctrl+c` on Mac. You can override it with your custom settings.
 
+If a rule exists in http://caniuse.com/ and is not showing correctly inside VSCode, please raise an Issue and I'll fix it.
+
 ## Screenshot
 
 The result will be displayed in your status bar
@@ -25,7 +27,6 @@ The result will be displayed in your status bar
 
 * Configuration options
 * Better support for partial matches
-* Better output 
 
 ## License
 [MIT License](https://raw.githubusercontent.com/akamud/vscode-caniuse/master/LICENSE)
