@@ -13,9 +13,9 @@ ext install Can I use
 
 Just execute the command "Can I Use" and you will get the information about the selected term in your status bar.
 
-The default keybinding is `shift+c` on Windows/Linux and `ctrl+c` on Mac. You can override it with your custom settings.
+The default keybinding is `ctrl+shift+i` on Windows/Linux and `ctrl+c` on Mac. You can override it with your custom settings.
 
-**Unfortunately it is not recommended to use `ctrl+alt` shortcuts on Windows, so I had to change it to `shift+C`. Remember you can just use the command from the palette or you can override it to any key binding of your choice.**
+**Unfortunately it is not recommended to use `ctrl+alt` shortcuts on Windows, so I had to change it to `ctrl+shift+i`, because C and U are already taken. Remember you can just use the command from the palette or you can override it to any key binding of your choice.**
 
 If a rule exists in http://caniuse.com/ and is not showing correctly inside VSCode, please raise an Issue and I'll fix it.
 
