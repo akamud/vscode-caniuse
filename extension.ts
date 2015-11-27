@@ -14,7 +14,7 @@ export function activate(context: vscode.ExtensionContext) {
         if (expandedSelection)
         {
             var word = editor.document.getText(expandedSelection);
-            word && caniuse.retrieveInformation(word.toLowerCase(), expandedSelection);
+            word && caniuse.retrieveInformation(caniuse.getNormalizedRule(word.toLowerCase()));
         }
 	});
 	
@@ -22,7 +22,12 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 export class CanIUse {
+    private rulesDictionary = require("../data/rulesDictionary.js");
     private  selectedBrowsers = ['IE', 'Firefox' , 'Chrome', 'Safari', 'Opera'];
+
+    getNormalizedRule(word: string): string {
+        return this.rulesDictionary[word] || word;
+    }
     
     getSelection(editor: vscode.TextEditor): vscode.Selection {
         const selection = editor.selection;
@@ -39,7 +44,7 @@ export class CanIUse {
         }
     }
     
-    retrieveInformation(word:string, selection: vscode.Selection)
+    retrieveInformation(word:string)
     {
         if (word)
         {
