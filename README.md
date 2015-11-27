@@ -19,6 +19,15 @@ The default keybinding is `ctrl+shift+i` on Windows/Linux and `ctrl+c` on Mac. Y
 
 If a rule exists in http://caniuse.com/ and is not showing correctly inside VSCode, please raise an Issue and I'll fix it.
 
+### Missing property?
+
+I do my best to map all properties correctly to caniuse.com, but if you are getting an "entry not found" that shouldn't be there, please, raise an [issue](https://github.com/akamud/vscode-caniuse/issues) or a Pull Request and I'll fix it ASAP.
+
+## What's new?
+
+**Version 0.4.0**  
+* Better support for partial matches using a [mapping file](https://github.com/akamud/vscode-caniuse/blob/master/data/rulesDictionary.js)
+
 ## Screenshot
 
 The result will be displayed in your status bar
@@ -28,7 +37,6 @@ The result will be displayed in your status bar
 ## Roadmap
 
 * Configuration options
-* Better support for partial matches
 
 ## License
 [MIT License](https://raw.githubusercontent.com/akamud/vscode-caniuse/master/LICENSE)
