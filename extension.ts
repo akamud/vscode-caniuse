@@ -91,7 +91,6 @@ export class CanIUse {
             {
                 result.push(this.selectedBrowsers[i] + " ✘");
             }
-                
         }
         
         if (result && result.length > 0)
@@ -110,16 +109,20 @@ export class CanIUse {
             return aNumber > bNumber ? 1 : aNumber == bNumber ? 0: -1 ;
         });
         
-        var found = [];
+        var found;
         for (var i = 0; i < keys.length; i++) {
             var element = keys[i];
             if (stats[keys[i]].indexOf("a") >= 0 || stats[keys[i]].indexOf("y") >= 0)
             {
-                found.push(keys[i]);
+                found = keys[i];
                 break;
             }
         }
+        if (found)
+        {
+            found += "+";
+        }
         
-        return found.shift();
+        return found;
     }
 }

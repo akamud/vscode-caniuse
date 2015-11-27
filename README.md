@@ -25,7 +25,7 @@ I do my best to map all properties correctly to caniuse.com, but if you are gett
 
 ## What's new?
 
-**Version 0.4.0**  
+**Version 0.4.1**  
 * Better support for partial matches using a [mapping file](https://github.com/akamud/vscode-caniuse/blob/master/data/rulesDictionary.js)
 
 ## Screenshot
