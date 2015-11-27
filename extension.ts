@@ -1,42 +1,41 @@
-import * as vscode from 'vscode'; 
+import * as vscode from 'vscode';
 import * as request from 'request';
 
 export function activate(context: vscode.ExtensionContext) {
-	var disposable = vscode.commands.registerCommand('extension.canIUse', () => {
+    var disposable = vscode.commands.registerCommand('extension.canIUse', () => {
         let caniuse = new CanIUse();
-        
+
         const editor = vscode.window.activeTextEditor;
         if (!editor) {
             return;
         }
         var expandedSelection = undefined;
         expandedSelection = caniuse.getSelection(editor);
-        if (expandedSelection)
-        {
+        if (expandedSelection) {
             var word = editor.document.getText(expandedSelection);
             word && caniuse.retrieveInformation(caniuse.getNormalizedRule(word).toLowerCase());
         }
-	});
-	
-	context.subscriptions.push(disposable);
+    });
+
+    context.subscriptions.push(disposable);
 }
 
 export class CanIUse {
     private rulesDictionary = require("../data/rulesDictionary.js");
-    private  selectedBrowsers = ['IE', 'Firefox' , 'Chrome', 'Safari', 'Opera'];
+    private selectedBrowsers = ['IE', 'Firefox', 'Chrome', 'Safari', 'Opera'];
 
     getNormalizedRule(word: string): string {
         let dict = this.rulesDictionary;
         let normalizedRule;
-        for(var p in dict){
-            if(word.toLowerCase() == p.toLowerCase()){
+        for (var p in dict) {
+            if (word.toLowerCase() == p.toLowerCase()) {
                 normalizedRule = dict[p];
                 break;
             }
         }
         return normalizedRule || word;
     }
-    
+
     getSelection(editor: vscode.TextEditor): vscode.Selection {
         const selection = editor.selection;
         if (selection.isEmpty) {
@@ -51,12 +50,9 @@ export class CanIUse {
             return selection;
         }
     }
-    
-    retrieveInformation(word:string)
-    {
-        console.log(word);
-        if (word)
-        {
+
+    retrieveInformation(word: string) {
+        if (word) {
             let caniuse = this;
             request({
                 json: true,
@@ -65,64 +61,55 @@ export class CanIUse {
             }, (error, response, body) => {
                 if (!error && response.statusCode == 200) {
                     var rule = body.data[word];
-                    
-                    if (rule && caniuse.showInformation(rule))
-                    {
+
+                    if (rule && caniuse.showInformation(rule)) {
                         return;
                     }
                 }
-                
+
                 vscode.window.setStatusBarMessage("Can I Use: entry not found", 5000);
             });
         }
     }
-    
+
     showInformation(data): boolean {
         var stats = data.stats;
         var result = [];
         for (var i = 0; i < this.selectedBrowsers.length; i++) {
             var browser = stats[this.selectedBrowsers[i].toLowerCase()];
             var version = this.getVersion(browser);
-            if (version)
-            {
+            if (version) {
                 result.push(this.selectedBrowsers[i] + " ✔ " + version);
             }
-            else
-            {
+            else {
                 result.push(this.selectedBrowsers[i] + " ✘");
             }
         }
-        
-        if (result && result.length > 0)
-        {
+
+        if (result && result.length > 0) {
             vscode.window.setStatusBarMessage("Can I Use: " + result.join(" "), 5000);
             return true;
         }
-        
+
         return false;
     }
-    
-    getVersion(stats:any): string {
-        var keys = Object.keys(stats).sort(function (a, b) {
+
+    getVersion(stats: any): string {
+        var keys = Object.keys(stats).sort(function(a, b) {
             var aNumber = +a;
             var bNumber = +b;
-            return aNumber > bNumber ? 1 : aNumber == bNumber ? 0: -1 ;
+            return aNumber > bNumber ? 1 : aNumber == bNumber ? 0 : -1;
         });
-        
+
         var found;
         for (var i = 0; i < keys.length; i++) {
             var element = keys[i];
-            if (stats[keys[i]].indexOf("a") >= 0 || stats[keys[i]].indexOf("y") >= 0)
-            {
+            if (stats[keys[i]].indexOf("a") >= 0 || stats[keys[i]].indexOf("y") >= 0) {
                 found = keys[i];
                 break;
             }
         }
-        if (found)
-        {
-            found += "+";
-        }
-        
-        return found;
+
+        return found && found + "+";
     }
 }
