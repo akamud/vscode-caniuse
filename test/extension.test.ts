@@ -22,4 +22,10 @@ suite("Can I Use Tests", () => {
                 
                 assert.equal(canIUseExt.getNormalizedRule("outline"), "outline");
         });
+        
+        test("Get rule from dictionary case insensitively", () => {
+                let canIUseExt = new CanIUse();
+                
+                assert.equal(canIUseExt.getNormalizedRule("scaleZ"), "transforms3d");
+        });
 });
