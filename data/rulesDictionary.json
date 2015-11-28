@@ -1,4 +1,4 @@
-module.exports = {
+{
   "<audio>": "audio",
   "draganddrop": "dragndrop",
   "query": "queryselector",
@@ -19,6 +19,7 @@ module.exports = {
   "onhashchange": "hashchange",
   "HashChangeEvent": "hashchange",
   "text shadow": "css-textshadow",
+  "box-shadow": "css-boxshadow",
   "box-shadows": "css-boxshadow",
   "boxshadows": "css-boxshadow",
   "box shadow": "css-boxshadow",

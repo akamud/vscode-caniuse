@@ -21,7 +21,7 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 export class CanIUse {
-    private rulesDictionary = require("../data/rulesDictionary.js");
+    private rulesDictionary = require("../data/rulesDictionary.json");
     private selectedBrowsers = ['IE', 'Firefox', 'Chrome', 'Safari', 'Opera'];
 
     getNormalizedRule(word: string): string {
