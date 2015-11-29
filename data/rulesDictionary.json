@@ -48,6 +48,7 @@
   "transition-duration": "css-transitions",
   "transition-timing-function": "css-transitions",
   "transition-delay": "css-transitions",
+  "animation": "css-animation",
   "animations": "css-animation",
   "css-animations": "css-animation",
   "animation-delay": "css-animation",
@@ -327,5 +328,8 @@
   "rotateZ": "transforms3d",
   "perspective": "transforms3d",
   "ttf": "ttf",
-  "otf": "ttf"
+  "otf": "ttf",
+  "zoom-in": "css3-cursors-newer",
+  "zoom-out": "css3-cursors-newer",
+  "zoom": "css-zoom"
 }
