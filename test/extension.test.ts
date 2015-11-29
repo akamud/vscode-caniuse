@@ -28,4 +28,16 @@ suite("Can I Use Tests", () => {
                 
                 assert.equal(canIUseExt.getNormalizedRule("scaleZ"), "transforms3d");
         });
+        
+        test("Get well-supported property", () => {
+                let canIUseExt = new CanIUse();
+                
+                assert.equal(canIUseExt.isWellSupported(canIUseExt.getNormalizedRule("background-color")), true);
+        });
+        
+        test("New properties won't show as well supported", () => {
+                let canIUseExt = new CanIUse();
+                
+                assert.equal(canIUseExt.isWellSupported(canIUseExt.getNormalizedRule("animation-name")), false);
+        });
 });
