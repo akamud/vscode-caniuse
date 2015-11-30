@@ -51,7 +51,8 @@
     },
     "scripts": {
         "vscode:prepublish": "tsc && node ./node_modules/vscode/bin/compile",
-        "compile": "tsc && node ./node_modules/vscode/bin/compile -watch -p ./"
+        "compile": "tsc && node ./node_modules/vscode/bin/compile -watch -p ./",
+        "test": "mocha --ui tdd ./out/test/extension.test.js"
     },
     "devDependencies": {
         "typescript": "^1.6.2",
