@@ -1,5 +1,5 @@
 # Can I Use
-
+![](https://img.shields.io/travis/akamud/vscode-caniuse/master.svg)  
 Compatibility check for HTML5, CSS3, SVG, New JS API based on http://caniuse.com/ directly from Visual Studio Code
 
 ## Installing
