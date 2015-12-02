@@ -1,7 +1,5 @@
 language: node_js
 node_js:
-    - "4.1"
-    - "4.0"
-    - "0.12"
+    - "4.2.1"
 script: 
     - "tsc && node ./node_modules/vscode/bin/compile"
