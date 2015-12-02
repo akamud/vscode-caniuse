@@ -1,9 +1,11 @@
 {
     "well-supported-properties": [
+        "background",
         "background-color",
         "background-image",
         "background-position",
         "background-repeat",
+        "border",
         "border-collapse",
         "border-color",
         "border-spacing",
@@ -13,6 +15,7 @@
         "clear",
         "display",
         "float",
+        "font",
         "font-family",
         "font-size",
         "font-style",
