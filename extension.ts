@@ -24,7 +24,7 @@ export class CanIUse {
     private rulesDictionary = require("../data/rulesDictionary.json");
     private wellSupportedProperties = require("../data/wellSupportedProperties.json");
     private selectedBrowsers = ['IE', 'Firefox', 'Chrome', 'Safari', 'Opera'];
-    
+
     isWellSupported(word: string): boolean {
         return this.wellSupportedProperties["well-supported-properties"].indexOf(word) >= 0;
     }
@@ -59,7 +59,7 @@ export class CanIUse {
     retrieveInformation(word: string) {
         if (word) {
             let caniuse = this;
-            
+
             if (caniuse.isWellSupported(word))
             {
                 vscode.window.setStatusBarMessage("Can I Use: All browsers ✔ (CSS 2.1 properties, well-supported subset)", 5000);
@@ -73,12 +73,12 @@ export class CanIUse {
                 }, (error, response, body) => {
                     if (!error && response.statusCode == 200) {
                         var rule = body.data[word];
-    
+
                         if (rule && caniuse.showInformation(rule)) {
                             return;
                         }
                     }
-    
+
                     vscode.window.setStatusBarMessage("Can I Use: entry not found", 5000);
                 });
             }
