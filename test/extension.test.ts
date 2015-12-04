@@ -7,7 +7,7 @@ import * as assert from 'assert';
 import * as path from 'path';
 
 import * as vscode from 'vscode';
-import {CanIUse} from '../extension';
+import {CanIUse} from '../can-i-use';
 
 suite("Can I Use Tests", () => {
         test("Get rule from dictionary", () => {
