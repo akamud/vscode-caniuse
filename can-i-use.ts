@@ -22,29 +22,27 @@ export class CanIUse {
     }
 
     retrieveInformation(word: string, callback: (s: string) => void): void {
-        if (word) {
-            let caniuse = this;
+        let caniuse = this;
 
-            if (caniuse.isWellSupported(word)) {
-                callback("Can I Use: All browsers ✔ (CSS 2.1 properties, well-supported subset)");
-            }
-            else {
-                request({
-                    json: true,
-                    uri: 'https://raw.githubusercontent.com/Fyrd/caniuse/master/data.json',
-                    gzip: true
-                }, (error, response, body) => {
-                    if (!error && response.statusCode == 200) {
-                        var rule = body.data[word];
+        if (caniuse.isWellSupported(word)) {
+            callback("Can I Use: All browsers ✔ (CSS 2.1 properties, well-supported subset)");
+        }
+        else {
+            request({
+                json: true,
+                uri: 'https://raw.githubusercontent.com/Fyrd/caniuse/master/data.json',
+                gzip: true
+            }, (error, response, body) => {
+                if (!error && response.statusCode == 200) {
+                    var rule = body.data[word];
 
-                        if (rule) {
-                            callback(caniuse.getSupportStatus(rule));
-                            return;
-                        }
+                    if (rule) {
+                        callback(caniuse.getSupportStatus(rule));
+                        return;
                     }
-                    callback("Can I Use: entry not found");
-                });
-            }
+                }
+                callback("Can I Use: entry not found");
+            });
         }
     }
 
