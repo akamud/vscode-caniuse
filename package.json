@@ -52,11 +52,14 @@
     "scripts": {
         "vscode:prepublish": "tsc && node ./node_modules/vscode/bin/compile",
         "compile": "tsc && node ./node_modules/vscode/bin/compile -watch -p ./",
-        "test": "mocha --ui tdd ./out/test/extension.test.js"
+        "test": "mocha --ui tdd ./out/test/extension.test.js",
+        "coverage": "mocha --ui tdd ./out/test/extension.test.js && istanbul report text-summary lcov"
     },
     "devDependencies": {
         "typescript": "^1.6.2",
-        "vscode": "0.10.x"
+        "vscode": "0.10.x",
+        "istanbul": "^0.4.1",
+        "coveralls": "^2.11.4"
     },
     "dependencies": {
         "request": "^2.66.0"
