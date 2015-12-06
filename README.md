@@ -1,5 +1,5 @@
 # Can I Use
-[![Build status](https://img.shields.io/travis/akamud/vscode-caniuse/master.svg)](https://travis-ci.org/akamud/vscode-caniuse)  
+[![Build status](https://img.shields.io/travis/akamud/vscode-caniuse/master.svg)](https://travis-ci.org/akamud/vscode-caniuse) [![Coverage Status](https://coveralls.io/repos/akamud/vscode-caniuse/badge.svg?branch=master&service=github)](https://coveralls.io/github/akamud/vscode-caniuse?branch=master)  
 Compatibility check for HTML5, CSS3, SVG, New JS API based on http://caniuse.com/ directly from Visual Studio Code
 
 ## Installing
