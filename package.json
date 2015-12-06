@@ -52,11 +52,14 @@
     "scripts": {
         "vscode:prepublish": "tsc && node ./node_modules/vscode/bin/compile",
         "compile": "tsc && node ./node_modules/vscode/bin/compile -watch -p ./",
-        "test": "mocha --ui tdd ./out/test/extension.test.js"
+        "test": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec --ui tdd ./out/test/extension.test.js",
+        "test-local": "istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec --ui tdd ./out/test/extension.test.js"
     },
     "devDependencies": {
         "typescript": "^1.6.2",
-        "vscode": "0.10.x"
+        "vscode": "0.10.x",
+        "istanbul": "^0.4.1",
+        "coveralls": "^2.11.4"
     },
     "dependencies": {
         "request": "^2.66.0"
