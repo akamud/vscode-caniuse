@@ -10,12 +10,12 @@ import * as vscode from 'vscode';
 import {CanIUse} from '../can-i-use';
 
 suite("Can I Use Tests", () => {
-        var canIUseExt;
-        
+        let canIUseExt : CanIUse;
+
         beforeEach(() => {
-           canIUseExt = new CanIUse();     
+                canIUseExt = new CanIUse();
         });
-        
+
         test("Get rule from dictionary", () => {
                 assert.equal(canIUseExt.getNormalizedRule("animation-name"), "css-animation");
         });
