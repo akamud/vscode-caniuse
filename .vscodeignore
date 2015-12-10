@@ -9,3 +9,5 @@ tsconfig.json
 vsc-extension-quickstart.md
 art/**
 .travis.yml
+test-data/**
+coverage/**
