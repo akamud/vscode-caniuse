@@ -6,16 +6,24 @@
 import * as assert from 'assert';
 import * as path from 'path';
 var sinon = require('sinon'); // sinon.d.ts is broken ATM
-import * as request from 'request';
+var request = require('request');
 import * as vscode from 'vscode';
 import {CanIUse} from '../can-i-use';
 
-let data = require("../../test-data/data.json");
-sinon
-    .stub(request, 'get')
-    .yields(null, { statusCode: 200 }, data);
-
 suite("Can I Use Tests", () => {
+    setup((done) => {
+        let data = require("../../test-data/data.json");
+        sinon
+            .stub(request, 'get')
+            .yields(null, { statusCode: 200 }, data);
+        done();        
+    });
+    
+    teardown((done) => {
+        request.get.restore();
+        done();
+    });
+    
     test("Get rule from dictionary", () => {
         let canIUseExt = new CanIUse();
 
