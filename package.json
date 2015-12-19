@@ -59,7 +59,8 @@
         "typescript": "^1.6.2",
         "vscode": "0.10.x",
         "istanbul": "^0.4.1",
-        "coveralls": "^2.11.4"
+        "coveralls": "^2.11.4",
+        "sinon": "^1.17.2"
     },
     "dependencies": {
         "request": "^2.66.0"
