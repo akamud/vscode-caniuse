@@ -28,7 +28,7 @@ export class CanIUse {
             callback("Can I Use: All browsers ✔ (CSS 2.1 properties, well-supported subset)");
         }
         else {
-            request({
+            request.get({
                 json: true,
                 uri: 'https://raw.githubusercontent.com/Fyrd/caniuse/master/data.json',
                 gzip: true
