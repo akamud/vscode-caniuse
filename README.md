@@ -6,7 +6,7 @@ Compatibility check for HTML5, CSS3, SVG, New JS API based on http://caniuse.com
 
 This extension is available for free in the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items/akamud.vscode-caniuse)  
 ```
-ext install Can I use
+ext install Can I Use
 ```
 
 ## Using
@@ -25,7 +25,7 @@ I do my best to map all properties correctly to caniuse.com, but if you are gett
 
 **Version 0.5.0**  
 * Support for CSS 2.1 properties
-* Better support for partial matches using a [mapping file](https://github.com/akamud/vscode-caniuse/blob/master/data/rulesDictionary.js)
+* Better support for partial matches using a [mapping file](https://github.com/akamud/vscode-caniuse/blob/master/data/rulesDictionary.json)
 
 ## Screenshot
 
