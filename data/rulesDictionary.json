@@ -120,6 +120,7 @@
   "transparent": "css-opacity",
   "transparency": "css-opacity",
   "alpha": "css-opacity",
+  "opacity": "css-opacity",
   "textoverflow": "text-overflow",
   "ellipsis": "text-overflow",
   "matroska": "webm",
