@@ -17,7 +17,7 @@ The default keybinding is `ctrl+shift+i` on Windows/Linux and `ctrl+c` on Mac. Y
 
 ## What's new?
 
-**Version 0.5.1**  
+**Version 0.5.2**  
 * Support for CSS 2.1 properties
 * Better support for partial matches using a [mapping file](https://github.com/akamud/vscode-caniuse/blob/master/data/rulesDictionary.json)
 * Fix CSS Opacity
