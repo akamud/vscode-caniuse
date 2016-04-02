@@ -8,7 +8,7 @@ import * as path from 'path';
 var sinon = require('sinon'); // sinon.d.ts is broken ATM
 var request = require('request');
 import * as vscode from 'vscode';
-import {CanIUse} from '../can-i-use';
+import {CanIUse} from '../src/can-i-use';
 
 suite("Can I Use Tests", () => {
     setup((done) => {

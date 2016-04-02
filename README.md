@@ -26,7 +26,7 @@ The default keybinding is `ctrl+shift+i` on Windows/Linux and `ctrl+c` on Mac. Y
 
 The result will be displayed in your status bar
 
-![](https://raw.githubusercontent.com/akamud/vscode-caniuse/master/screenshot.png)
+![](https://raw.githubusercontent.com/akamud/vscode-caniuse/master/art/screenshot.png)
 
 ### Missing property?
 

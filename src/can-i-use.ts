@@ -1,8 +1,8 @@
 import * as request from 'request';
 
 export class CanIUse {
-    private rulesDictionary = require("../data/rulesDictionary.json");
-    private wellSupportedProperties = require("../data/wellSupportedProperties.json");
+    private rulesDictionary = require("../../data/rulesDictionary.json");
+    private wellSupportedProperties = require("../../data/wellSupportedProperties.json");
     private selectedBrowsers = ['IE', 'Firefox', 'Chrome', 'Safari', 'Opera'];
 
     isWellSupported(word: string): boolean {

@@ -34,7 +34,7 @@
         "type": "git",
         "url": "https://github.com/akamud/vscode-caniuse.git"
     },
-    "main": "./out/extension",
+    "main": "./out/src/extension",
     "contributes": {
         "commands": [
             {
@@ -51,7 +51,7 @@
     },
     "scripts": {
         "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
-        "compile": "&& node ./node_modules/vscode/bin/compile -watch -p ./",
+        "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
         "test": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec --ui tdd ./out/test/extension.test.js",
         "test-local": "istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec --ui tdd ./out/test/extension.test.js"
     },
