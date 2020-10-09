@@ -39,6 +39,7 @@
         "top",
         "width",
         "word-spacing",
+        "vertical-align",
         "visibility",
         "z-index"
     ]
