@@ -12,7 +12,8 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.canIUse"
+        "onCommand:extension.canIUse",
+        "onCommand:extension.openCanIUse"
     ],
     "author": "akamud",
     "keywords": [
@@ -42,12 +43,20 @@
                 "title": "Can I Use"
             }
         ],
-        "keybindings": {
-            "when": "editorTextFocus",
-            "command": "extension.canIUse",
-            "key": "ctrl+shift+i",
-            "mac": "ctrl+c"
-        }
+        "keybindings": [
+            {
+                "when": "editorTextFocus",
+                "command": "extension.canIUse",
+                "key": "ctrl+shift+i",
+                "mac": "ctrl+c"
+            },
+            {
+                "when": "editorTextFocus",
+                "command": "extension.openCanIUse",
+                "key": "ctrl+shift+alt+i",
+                "mac": "ctrl+shift+c"
+            }
+        ]
     },
     "scripts": {
         "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
