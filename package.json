@@ -57,9 +57,9 @@
     },
     "devDependencies": {
         "typescript": "^1.6.2",
-        "vscode": "0.10.x",
+        "vscode": "1.1.x",
         "istanbul": "^0.4.1",
-        "mocha": "^2.4.5",
+        "mocha": "^10.2.0",
         "coveralls": "^2.11.4",
         "sinon": "^1.17.2"
     },
